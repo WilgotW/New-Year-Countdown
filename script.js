@@ -163,7 +163,7 @@ function checkInactivity(){
     currentMouseX = mouse.x;
     currentMouseY = mouse.y;
 }
-setInterval(checkInactivity, 2000);
+setInterval(checkInactivity, 1000);
 
 function refrech(){
     c.fillStyle = 'rgba(0, 0, 0, 0.1)';
