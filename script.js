@@ -154,6 +154,17 @@ window.addEventListener('click', function(event) {
     
 });
 
+let currentMouseX = mouse.x;
+let currentMouseY = mouse.y;
+function checkInactivity(){
+    if(mouse.x == currentMouseX && mouse.y == currentMouseY){
+        removePaint();
+    }
+    currentMouseX = mouse.x;
+    currentMouseY = mouse.y;
+}
+setInterval(checkInactivity, 2000);
+
 function refrech(){
     c.fillStyle = 'rgba(0, 0, 0, 0.1)';
     c.fillRect(0, 0, canvas.width, canvas.height);
