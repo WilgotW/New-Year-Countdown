@@ -35,10 +35,8 @@ function countDown(){
     //months
     monthsLeft = 12 - (new Date().getMonth() + 1);
     //days:
-    
     let daysThisMonth = getDays(new Date().getFullYear(), (new Date().getMonth() + 1));
-    console.log();
-    daysLeft = daysThisMonth - new Date().getDay();
+    daysLeft = daysThisMonth - new Date().getDate();
     //hours:
     hoursLeft = 24 - new Date().getHours();
     //minutes:
