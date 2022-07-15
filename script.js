@@ -1,7 +1,10 @@
 
 
-
-
+let monthsLeft;
+let daysLeft;
+let hoursLeft;
+let minutesLeft;
+let secondsLeft;
 
 const monthNum = document.getElementById("months")
 const daysNum = document.getElementById("days");
@@ -11,15 +14,38 @@ const secondsNum = document.getElementById("seconds");
 
 function updateDate(){
     //months:
-    monthNum.innerHTML = new Date().getMonth();
+    monthNum.innerHTML = monthsLeft;
     //days:
-    daysNum.innerHTML = new Date().getDate();
+    daysNum.innerHTML = daysLeft;
     //hours:
-    hoursNum.innerHTML = new Date().getHours();
+    hoursNum.innerHTML = hoursLeft;
     //minutes:
-    minutesNum.innerHTML = new Date().getMinutes();
+    minutesNum.innerHTML = minutesLeft;
     //seconds:
-    secondsNum.innerHTML = new Date().getSeconds();
+    secondsNum.innerHTML = secondsLeft;
     requestAnimationFrame(updateDate);
 }
 updateDate();
+
+const getDays = (year, month) => {
+    return new Date(year, month, 0).getDate();
+};
+
+function countDown(){
+    //months
+    monthsLeft = 12 - (new Date().getMonth() + 1);
+    //days:
+    
+    let daysThisMonth = getDays(new Date().getFullYear(), (new Date().getMonth() + 1));
+    console.log();
+    daysLeft = daysThisMonth - new Date().getDay();
+    //hours:
+    hoursLeft = 24 - new Date().getHours();
+    //minutes:
+    minutesLeft = 60 - new Date().getMinutes();
+    //seconds:
+    secondsLeft = 60 - new Date().getSeconds();
+    requestAnimationFrame(countDown);
+}
+countDown();
+
