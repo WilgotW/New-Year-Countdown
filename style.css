@@ -10,6 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-duration: 1000ms;
     
 }
 .collection-item{
@@ -23,7 +24,13 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
     margin-left: 1vw;
     margin-right:  1vw;
+    -webkit-box-shadow: -2px -1px 15px 7px rgba(0,0,0,0.9);
+    -moz-box-shadow: -3px -2px 30px 14px rgba(0,0,0,0.425);
+    box-shadow: -4px -3px 45px 21px rgba(0,0,0,0.35);
+    
 }
+
+
 h1{
     color: rgb(240, 240, 240);
     padding: 0;
